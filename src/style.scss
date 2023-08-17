@@ -1,0 +1,23 @@
+.container {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 1280px;
+}
+
+body {
+    margin: 0;
+}
+
+section {
+    padding: 100px 0
+}
+
+@import "./components/header/header";
+@import "./components/hero/hero";
+@import "./components/aboutus/aboutus";
+@import "./components/services/services";
+@import "./components/news/news";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css";
+

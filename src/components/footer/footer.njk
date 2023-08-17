@@ -1,0 +1,66 @@
+{%- from "../logo/logo.njk" import Logo -%}
+
+{% set navItems = [
+    {
+        label: 'About us',
+        dropdown: true
+    }, {
+        label: 'Services',
+        dropdown: true
+    }, {
+        label: 'News',
+        dropdown: true
+    }, {
+        label: 'Events',
+        dropdown: true
+    }
+] %}
+
+{%- macro Footernav() -%}
+    <nav class="navbar">
+        <ul class="nav-list">
+            {%- for item in navItems -%}
+                <li class="nav-item">
+                    {%- if item.dropdown -%}
+                        <a class="dropbtn" href="#">{{ item.label }}</a>
+                        <ul class="dropdown__content">
+                            {%- for dropdownItem in dropdownItems -%}
+                                <li>
+                                    <a href="#">{{ dropdownItem }}</a>
+                                </li>
+                            {%- endfor -%}
+                        </ul>
+                    {%- else -%}
+                        <a href="#">{{ item.label }}</a>
+                    {%- endif -%}
+                </li>
+            {%- endfor -%}
+        </ul>
+    </nav>
+{%- endmacro -%}
+
+{%set icons=[]%}
+
+{% macro navIcon(args) %}
+    <div>
+        {%- for item in icons -%}
+            <div>{{ item }}</div>
+        {%- endfor -%}
+    </div>
+{% endmacro %}
+
+{% macro footer() %}
+    <div class="header__logo">
+        {{ Logo('logo-color.svg', 100, 100) }}
+    </div>
+    <div>
+        <p>osi test project</p>
+        <p>2 place hotel de ville jacques-chirac 77100 meaux</p>
+    </div>
+    <div>
+        {{ Footernav() }}
+    </div>
+    <div>
+        {{ navIcon() }}
+    </div>
+{% endmacro %}

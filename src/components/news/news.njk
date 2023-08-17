@@ -1,0 +1,32 @@
+{%- from "core-components/title.njk" import Title -%}
+{% set cards = [
+    {image: "ico-black_ico--06.svg", title: "Carte 1", text: "Texte de la carte 1."},
+    {image: "ico-black_ico--06.svg", title: "Carte 2", text: "Texte de la carte 2."},
+    {image: "ico-black_ico--06.svg", title: "Carte 3", text: "Texte de la carte 3."},
+    {image: "ico-black_ico--06.svg", title: "Carte 4", text: "Texte de la carte 4."}
+] %}
+
+{% macro Slider() %}
+  <div class="swiper">
+    <swiper-container class="mySwiper" navigation="true">
+      {% for card in cards %}
+        <swiper-slide>
+          <div class="aboutus__container container">
+    <div class="services__titre">
+      {{ Title("Services") }}
+    </div>
+    <div class="services__list">
+      <div class="card">
+        <img src=card.image  alt="Image de la carte">
+        <h2>{{ card.title }}</h2>
+        <p>{{ card.text }}</p>
+      </div>
+    </div>  
+  </div>
+        </swiper-slide>
+      {% endfor %}
+    </swiper-container>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+  </div>
+{% endmacro %}

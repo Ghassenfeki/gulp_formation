@@ -1,0 +1,27 @@
+{%- from "core-components/title.njk" import Title -%}
+{% set cards = [
+        {"image": "ico-black_ico--06.svg", "title": "Carte 1", "text": "Texte de la carte 1."},
+        {"image": "ico-black_ico--06.svg", "title": "Carte 2", "text": "Texte de la carte 2."},
+        {"image": "ico-black_ico--06.svg", "title": "Carte 3", "text": "Texte de la carte 3."},
+        {"image": "ico-black_ico--06.svg", "title": "Carte 4", "text": "Texte de la carte 4."},
+        {"image": "ico-black_ico--06.svg", "title": "Carte 5", "text": "Texte de la carte 5."}
+    ] %}
+
+{% macro Services() %}
+    <section>
+        <div class="aboutus__container container">
+            <div class="services__titre">
+                {{ Title("Services") }}
+            </div>
+            <ul class="services__list">
+                {% for card in cards %}
+                    <li class="card">
+                        <img src="{{ card.image }}" alt="Image de la carte">
+                        <h2>{{ card.title }}</h2>
+                        <p>{{ card.text }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endmacro %}

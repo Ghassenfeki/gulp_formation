@@ -1,0 +1,31 @@
+{%- from "./components/header/header.njk" import Header -%}
+{%- from "../src/components/hero/hero.njk" import Hero -%}
+{%- from "../src/components/aboutus/aboutus.njk" import AboutUs -%}
+{%- from "../src/components/services/services.njk" import Services -%}
+{% from "./components/news/news.njk" import Slider %}
+{% from "./components/contactus/contact.njk" import Contact %}
+{% from "./components/footer/footer.njk" import footer %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+  </head>
+  <body>
+    {{ Header() }}
+     {{ Hero('hero.jpg', 1600, 900) }}
+    {{ AboutUs() }}
+    {#{{ Slider(cards) }}
+    {{ Services() }}
+    {{ Contact() }}
+    {{ footer() }} #}
+  </body>
+</html>
+
+{# templates/index.njk #}
+

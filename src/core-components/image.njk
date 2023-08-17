@@ -1,0 +1,31 @@
+{% set imageDefaults = {
+    sizes: [
+        '480x300?479',
+        '768x480?767',
+        '992x520',
+        '1280x560',
+        '1920x840'
+    ],
+    type: 'default',
+    service: 'stratis',
+    image: [],
+    className: '',
+    dataItems: '',
+    serviceID: '1',
+    id: '',
+    alt: '',
+    width: 480,
+    height: 300
+} %}
+
+{%- macro Image(settings = {}) -%}
+<img
+                    data-error-src="{{ placeholder }}"
+                    data-src="{{ imageUrl }}"
+                    src="{{ placeholder }}"
+                    width="{{ dimensions[0] }}"
+                    height="{{ dimensions[1] }}"
+                    alt="{{ settings.alt }}"
+                    class="{{ "is-no-image" if settings.type == "no-image" }} lazy lazyload"
+                >
+                {%- endmacro -%}

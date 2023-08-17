@@ -1,0 +1,16 @@
+.aboutus__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutus__text {
+    width: 33%;
+}
+
+.aboutus__image-second {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: center;
+}

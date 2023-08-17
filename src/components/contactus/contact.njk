@@ -1,0 +1,23 @@
+{%- from "core-components/title.njk" import Title -%}
+
+{% macro Contact(args) %}
+    <div class="">
+        <div class="services__titre">
+            {{ Title("Contact us") }}
+        </div>
+        <div>
+            <div>
+                <img src="https://placehold.co/600x400" alt="Image">
+                <form>
+                    <p>Enter you e-mail:</p>
+                    <input type="text" name="field1" placeholder="Champ 1">
+                    <p>How to contact you:</p>
+                    <input type="text" name="field2" placeholder="Champ 2">
+                    <p>Your message:</p>
+                    <input type="text" name="field3" placeholder="Champ 3">
+                    <button type="submit">Soumettre</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

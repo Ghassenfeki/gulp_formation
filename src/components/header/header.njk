@@ -1,0 +1,69 @@
+{%- from "../logo/logo.njk" import Logo -%}
+{%- from "../search/search.njk" import SearchBar -%}
+
+{#
+    HeaderNav template
+#}
+{% set navItems = [
+    {
+        label: 'About us',
+        dropdown: true
+    }, {
+        label: 'Services',
+        dropdown: true
+    }, {
+        label: 'News',
+        dropdown: true
+    }, {
+        label: 'Events',
+        dropdown: true
+    }
+] %}
+
+{% set dropdownItems = ['Produit 1', 'Produit 2', 'Produit 3'] %}
+
+{%- macro Headernav() -%}
+    <nav class="navbar">
+        <ul class="nav-list">
+            {%- for item in navItems -%}
+                <li class="nav-item">
+                    {%- if item.dropdown -%}
+                        <a class="dropbtn" href="#">{{ item.label }}</a>
+                        <ul class="dropdown__content">
+                            {%- for dropdownItem in dropdownItems -%}
+                                <li>
+                                    <a href="#">{{ dropdownItem }}</a>
+                                </li>
+                            {%- endfor -%}
+                        </ul>
+                    {%- else -%}
+                        <a href="#">{{ item.label }}</a>
+                    {%- endif -%}
+                </li>
+            {%- endfor -%}
+        </ul>
+    </nav>
+{%- endmacro -%}
+
+{#
+    Header template
+#}
+{% macro Header() %}
+    <header class="header container">
+        <div class="header-wrapper__container">
+            <div class="header-wrapper__inner">
+                <div class="header__logo">
+                    {{ Logo('logo-color.svg', 100, 100) }}
+                </div>
+                <div class="header__components">
+                    <div class="header__search">
+                        {{ SearchBar() }}
+                    </div>
+                    <div class="header__nav">
+                        {{ Headernav(navItems, dropdownItems) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endmacro %}

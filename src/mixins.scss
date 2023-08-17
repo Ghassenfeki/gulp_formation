@@ -1,0 +1,14 @@
+@use 'sass:math';
+
+@mixin media-min($breakpoint) {
+    @media screen and (min-width: #{$breakpoint}px) {
+        @content;
+    }
+}
+
+@mixin on-event {
+    &:hover,
+    &:focus {
+        @content;
+    }
+}
